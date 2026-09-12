@@ -53,9 +53,9 @@ public:
     PSCustomMakefileRulesPage(wxWindow* parent, ProjectSettingsDlg* dlg);
     //// end generated class members
 
-    virtual void Load(BuildConfigPtr buildConf);
-    virtual void Save(BuildConfigPtr buildConf, ProjectSettingsPtr projSettingsPtr);
-    virtual void Clear();
+    void Load(BuildConfigPtr buildConf) override;
+    void Save(BuildConfigPtr buildConf, ProjectSettingsPtr projSettingsPtr) override;
+    void Clear() override;
 };
 
 #endif // __ps_custom_makefile_rules_page__

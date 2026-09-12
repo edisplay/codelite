@@ -57,9 +57,9 @@ public:
     PSLinkerPage(wxWindow* parent, ProjectSettingsDlg* dlg, PSGeneralPage* gp);
     //// end generated class members
 
-    virtual void Load(BuildConfigPtr buildConf);
-    virtual void Save(BuildConfigPtr buildConf, ProjectSettingsPtr projSettingsPtr);
-    virtual void Clear();
+    void Load(BuildConfigPtr buildConf) override;
+    void Save(BuildConfigPtr buildConf, ProjectSettingsPtr projSettingsPtr) override;
+    void Clear() override;
 };
 
 #endif // __ps_linker_page__

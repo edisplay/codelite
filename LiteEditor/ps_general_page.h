@@ -46,10 +46,10 @@ class PSGeneralPage : public PSGeneralPageBase, public IProjectSettingsPage
     wxString m_configName;
 
 protected:
-    virtual void OnCustomEditorClicked(wxCommandEvent& event);
-    virtual void OnProjectEnabled(wxCommandEvent& event);
-    virtual void OnValueChanging(wxPropertyGridEvent& event);
-    virtual void OnValueChanged(wxPropertyGridEvent& event);
+    void OnCustomEditorClicked(wxCommandEvent& event) override;
+    void OnProjectEnabled(wxCommandEvent& event) override;
+    void OnValueChanging(wxPropertyGridEvent& event) override;
+    void OnValueChanged(wxPropertyGridEvent& event) override;
 
     wxString GetPropertyAsString(wxPGProperty* prop) const;
     bool GetPropertyAsBool(wxPGProperty* prop) const;
@@ -62,9 +62,9 @@ public:
     /** Constructor */
     PSGeneralPage(wxWindow* parent, const wxString& projectName, const wxString& conf, ProjectSettingsDlg* dlg);
     //// end generated class members
-    virtual void Save(BuildConfigPtr buildConf, ProjectSettingsPtr projSettingsPtr);
-    virtual void Load(BuildConfigPtr buildConf);
-    virtual void Clear();
+    void Save(BuildConfigPtr buildConf, ProjectSettingsPtr projSettingsPtr) override;
+    void Load(BuildConfigPtr buildConf) override;
+    void Clear() override;
     wxString GetCompiler() const { return m_pgPropCompiler->GetValueAsString(); }
 };
 
